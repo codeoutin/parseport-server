@@ -1,32 +1,47 @@
 package parseport.server;
 
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.data.annotation.Id;
 
 /**
  * Created by Kevin on 15.05.17.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Entity {
 
     @Id private String eid;
     private String datasource;
-
     private String backlink;
     private String classification;
     private long loadedAt;
     private String completeText;
+    /*
     private List<Property> sourceProperties;
     private List<Property> syntheticProperties;
+*/
 
-    public Entity(String eid, String datasource, String backlink, String classification, long loadedAt, String completeText, List<Property> sourceProperties, List<Property> syntheticProperties) {
+    Entity(String eid,
+           String datasource,
+           String backlink,
+           String classification,
+           long loadedAt,
+           String completeText
+           /*
+           List<Property> sourceProperties,
+           List<Property> syntheticProperties*/)
+    {
         this.eid = eid;
         this.datasource = datasource;
         this.backlink = backlink;
         this.classification = classification;
         this.loadedAt = loadedAt;
         this.completeText = completeText;
+       /*
         this.sourceProperties = sourceProperties;
         this.syntheticProperties = syntheticProperties;
+        */
     }
 
     public String getEid() {

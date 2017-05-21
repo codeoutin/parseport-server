@@ -1,10 +1,13 @@
 package parseport.server;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.List;
 
 /**
  * Created by Kevin on 15.05.17.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Property {
 
     private String name;
