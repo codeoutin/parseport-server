@@ -25,3 +25,4 @@ nbdist/
 
 ### Spring ###
 /src/main/resources/application.properties
+/profiles.xml
