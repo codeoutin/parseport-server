@@ -1,5 +1,6 @@
 package parseport.server;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -17,20 +18,17 @@ public class Entity {
     private String classification;
     private long loadedAt;
     private String completeText;
-    /*
+
     private List<Property> sourceProperties;
     private List<Property> syntheticProperties;
-*/
 
-    Entity(String eid,
-           String datasource,
-           String backlink,
-           String classification,
-           long loadedAt,
-           String completeText
-           /*
-           List<Property> sourceProperties,
-           List<Property> syntheticProperties*/)
+    public Entity()
+    {
+        this.sourceProperties = new ArrayList<>();
+        this.syntheticProperties = new ArrayList<>();
+    }
+
+    public Entity(String eid, String datasource, String backlink, String classification, long loadedAt, String completeText)
     {
         this.eid = eid;
         this.datasource = datasource;
@@ -38,10 +36,22 @@ public class Entity {
         this.classification = classification;
         this.loadedAt = loadedAt;
         this.completeText = completeText;
-       /*
+
+        this.sourceProperties = new ArrayList<>();
+        this.syntheticProperties = new ArrayList<>();
+    }
+
+    public Entity(String eid, String datasource, String backlink, String classification, long loadedAt, String completeText, List<Property> sourceProperties, List<Property> syntheticProperties)
+    {
+        this.eid = eid;
+        this.datasource = datasource;
+        this.backlink = backlink;
+        this.classification = classification;
+        this.loadedAt = loadedAt;
+        this.completeText = completeText;
+
         this.sourceProperties = sourceProperties;
         this.syntheticProperties = syntheticProperties;
-        */
     }
 
     public String getEid() {
